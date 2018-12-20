@@ -47,14 +47,14 @@
 * Larger scoped variable members (like global variables, constants, public or protected properties) should have a longer name
 * Smaller scoped variable members (like private member variables or local variables) should have a shorter name
 * Method arguments, exception instances and counter veriables should have shorter names
-* Bool variables and members should start with is or be a past tense verb (like isDone, isLoggedIn, done, loggedIn, etc.)
+* Boolean variables and members should start with is or be a past or simple present tense verb (like isDone, isLoggedIn, done, loggedIn, doesSomething, Validates(), etc.)
 --------------------------------------------------------------------------------------------------------------------
 ## Methods should:
 * Be small
 * Have single responsibility
 * Be testable
 * Be reusable and DRY
-* Not have deeply nested blocks
+* Not have more than 3 levels of nesting in blocks
 * Have single line in its conditional blocks (extract the block into a separate method if it is more than one line)
 * Should not have side-effects other than its name implies (complicates the code)
 * Apply command query separation, should either return a value or change some state but not both (except for Try...() methods or when a command and a query has to be atomic like a Login() method, or for performance reasons like a db Insert() method which will also retrieves the Id anf foreign key Ids on the object after inserting an object graph)
@@ -63,7 +63,7 @@
 * Not have more than 3 parameters
 * (You can grab the outside code getting or calculating a parameter and move it inside the method being called, and remove this method parameter)
 * (You can also extract some of the parameters into an object, then  move and turn the method into a member method of this object, thus remove those parameters)
-* Not have bool flag parameters (extract to 2 different methods for each case of the flag)
+* Not have boolean flag parameters (extract to 2 different methods for each case of the flag)
 * Not pass null as parameters when calling other methods (else every methods will have to check if their arguments are null each time they are called)
 * Not return null, but instead return a Maybe<T> result, or an empty collection, or throw exception when appropiate (else every method result will have to be checked if it is null each time it is called, somebody will forget this check and try to use the null result)
 * Prefer not using output parameters, instead return it as a result
@@ -102,4 +102,4 @@
 * Code coverage measures how much of the code (ratio of lines of code or branches) are covered (executed by) unit tests, however high coverage does not automatically mean the tests are effective, test input data and assertions are effectively important in tests
 * Unit test pass percentage, when low, can indicate either the code has bugs or the tests are not isolated, they are brittle or obsolete
 * Duplicate code percentage measures DRYness of code
-* Technical debt measures the development time needed to maintain and extend the codebase, is a sign of taking short cuts instead of applying the best solution
+* Technical debt measures the development time needed to maintain and extend the codebase, is a sign of taking shortcuts instead of applying the best solution
