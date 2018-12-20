@@ -61,8 +61,8 @@
 * Throw exception instead of return error result (to eliminate deeply nested blocks)
 * Extract long conditions (having multiple and/or operators) into a separate method that returns the bool result of this long condition
 * Not have more than 3 parameters
-* (You can grab the outside code getting or calculating a parameter and move it inside the method being called, and remove this method parameter)
-* (You can also extract some of the parameters into an object, then  move and turn the method into a member method of this object, thus remove those parameters)
+* (You can grab the outside code getting or calculating a parameter and move it inside the method being called, and remove this method thid "parameter object")
+* (You can also extract some of the parameters into a "parameter object", then even move the method and turn it into a member method of this object, thus remove those parameters)
 * Not have boolean flag parameters (extract to 2 different methods for each case of the flag)
 * Not pass null as parameters when calling other methods (else every methods will have to check if their arguments are null each time they are called)
 * Not return null, but instead return a Maybe<T> result, or an empty collection, or throw exception when appropiate (else every method result will have to be checked if it is null each time it is called, somebody will forget this check and try to use the null result)
