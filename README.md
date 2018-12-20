@@ -71,7 +71,7 @@
 * Fail fast (return early)
 * Not use goto
 * Not have multiple returns/breaks inside loops
-* Not have long switch cases (instead use polymorphism for case code blocks or hashtable/dictionary for case return values)
+* Not have large number of cases in switch statements (don't tell, rather ask, use polymorphism for case code blocks or hashtable/dictionary for case return values)
 * Not have temporal coupling (like Open...() some code block... Close...(), instead either use a method that accepts the the code block as a lambda Action<T>, or use the .Net using (...) block Disposable pattern, or use template method pattern)
 * Not have very long lines that need horizontal scrooling
 * Not have #region blocks, this is a sign of a long method or a large class
