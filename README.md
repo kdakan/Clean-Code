@@ -11,7 +11,7 @@
 * Code is maintained by 10 different developers over time because of the developer turnover rate
 * Code that is not clean, becomes unmaintainable over time after it grows, and finally has to be discarded
 --------------------------------------------------------------------------------------------------------------------
-## Clean code means it code should be:
+## Clean code should be:
 * Readable, expressive, reveal intent and discoverable
 * Maintainable, easy to add, change and extend
 * Modular, having small units of single responsibility
