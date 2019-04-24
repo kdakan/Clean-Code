@@ -1,15 +1,15 @@
 # Clean Code
 
-[ 1. Clean code principles](#1-clean-code-principles)
-[ 2. Reasons for clean code](#2-reasons-for-clean-code)
-[ 3. Attributes of clean code](#3-attributes-of-clean-code)
-[ 4. Code duplication and DRY](#4-code-duplication-and-dry)
-[ 5. Exceptions to DRY](#5-xceptions-to-dry)
-[ 6. Names](#6-names)
-[ 7. Methods](#7-methods)
-[ 8. Comments](#8-comments)
-[ 9. Exception handling](#9-exception-handling)
-[10. Code metrics](#10-code-metrics)
+- [ 1. Clean code principles](#1-clean-code-principles)
+- [ 2. Reasons for clean code](#2-reasons-for-clean-code)
+- [ 3. Attributes of clean code](#3-attributes-of-clean-code)
+- [ 4. Code duplication and DRY](#4-code-duplication-and-dry)
+- [ 5. Exceptions to DRY](#5-xceptions-to-dry)
+- [ 6. Names](#6-names)
+- [ 7. Methods](#7-methods)
+- [ 8. Comments](#8-comments)
+- [ 9. Exception handling](#9-exception-handling)
+- [10. Code metrics](#10-code-metrics)
 
 ## 1. Clean code principles:
 * You should use the right tool for the job (tech boundaries matter, do not mix code between HTML, Javascript, CSS, C# backend, SQL database, they have their own strong use cases and there are clear ways of communication between them, use SQL and db parameters to talk to db, run security, validation and business logic in the backend and use http to talk to it, use JSON and cookies to respond to javascript frontend, use CSS to style HTML, etc.)
