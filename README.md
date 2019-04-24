@@ -8,7 +8,7 @@
 - [ 6. Names](#6-names)
 - [ 7. Methods](#7-methods)
 - [ 8. Comments](#8-comments)
-- [ 9. Exception handling](#9-error-handling)
+- [ 9. Error handling](#9-error-handling)
 - [10. Code metrics](#10-code-metrics)
 
 ## 1. Clean code principles:
