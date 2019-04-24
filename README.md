@@ -4,11 +4,11 @@
 - [ 2. Reasons for clean code](#2-reasons-for-clean-code)
 - [ 3. Attributes of clean code](#3-attributes-of-clean-code)
 - [ 4. Code duplication and DRY](#4-code-duplication-and-dry)
-- [ 5. Exceptions to DRY](#5-xceptions-to-dry)
+- [ 5. Exceptions to DRY](#5-exceptions-to-dry)
 - [ 6. Names](#6-names)
 - [ 7. Methods](#7-methods)
 - [ 8. Comments](#8-comments)
-- [ 9. Exception handling](#9-exception-handling)
+- [ 9. Exception handling](#9-error-handling)
 - [10. Code metrics](#10-code-metrics)
 
 ## 1. Clean code principles:
