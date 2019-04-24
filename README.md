@@ -1,38 +1,53 @@
 # Clean Code
---------------------------------------------------------------------------------------------------------------------
-## Clean code principles:
+
+[ 1. Clean code principles](#1-clean-code-principles)
+[ 2. Reasons for clean code](#2-reasons-for-clean-code)
+[ 3. Attributes of clean code](#3-attributes-of-clean-code)
+[ 4. Code duplication and DRY](#4-code-duplication-and-dry)
+[ 5. Exceptions to DRY](#5-xceptions-to-dry)
+[ 6. Names](#6-names)
+[ 7. Methods](#7-methods)
+[ 8. Comments](#8-comments)
+[ 9. Exception handling](#9-exception-handling)
+[10. Code metrics](#10-code-metrics)
+
+## 1. Clean code principles:
 * You should use the right tool for the job (tech boundaries matter, do not mix code between HTML, Javascript, CSS, C# backend, SQL database, they have their own strong use cases and there are clear ways of communication between them, use SQL and db parameters to talk to db, run security, validation and business logic in the backend and use http to talk to it, use JSON and cookies to respond to javascript frontend, use CSS to style HTML, etc.)
 * Code should have a high signal to noise ratio (TED=terse, expressive, do one thing, DRY=don't repeat yourself, similar to db normalization)
 * Code should be self documenting (clear intent, use proper layers of abstraction)
---------------------------------------------------------------------------------------------------------------------
-## Reasons for clean code:
+
+## 2. Reasons for clean code:
 * Most of the time and resources are spent during the maintenance phase in the lifecycle of a software project
 * Each line of code is read by 10 different developers over time
 * Code is maintained by 10 different developers over time because of the developer turnover rate
 * Code that is not clean, becomes unmaintainable over time after it grows, and finally has to be discarded
---------------------------------------------------------------------------------------------------------------------
-## Clean code should be:
+
+## 3. Attributes of clean code:
 * Readable, expressive, reveal intent and discoverable
 * Maintainable, easy to add, change and extend
 * Modular, having small units of single responsibility
 * Simple (avoid accidental complexity)
 * DRY (little or no code duplication)
 * Easy to use and unit test, have minimal dependencies
---------------------------------------------------------------------------------------------------------------------
-## Code duplication can be eliminated by:
+
+## 4. Code duplication and DRY:
+DRY = Don't Repeat Yourself (single source of truth)
+
+Code duplication can be eliminated by:
 * Using code analyzer tools
 * Code reviews
 * Team culture
 * Good documentation
 * Planned architecture
---------------------------------------------------------------------------------------------------------------------
-## Exceptions to DRY:
+
+## 5. Exceptions to DRY:
 * Performance/security critical code (like similar functionality coded in a more performant or secure way)
 * Loosely coupling of layers, modules, or subsystems (like similar classes for UI view models, DTOs, and domain models, similar code for each module or microservice, etc.)
 * To increase readability and reducing coupling between automated test methods (ideally automated test methods should be isolated from each other)
 * Auto-generated code because of platform limitations, using RAD techniques, or building proof of concept code or prototypes
---------------------------------------------------------------------------------------------------------------------
-## Names should:
+
+## 6. Names:
+Names should:
 * Reveal intent
 * Be pronounceable
 * Be clear and unambiguous
@@ -48,8 +63,9 @@
 * Smaller scoped variable members (like private member variables or local variables) should have a shorter name
 * Method arguments, exception instances and counter veriables should have shorter names
 * Boolean variables and members should start with is or be a past or simple present tense verb (like isDone, isLoggedIn, done, loggedIn, doesSomething, Validates(), etc.)
---------------------------------------------------------------------------------------------------------------------
-## Methods should:
+
+## 7. Methods:
+Methods should:
 * Be small
 * Have single responsibility
 * Be testable
@@ -76,16 +92,16 @@
 * Not have very long lines that need horizontal scrooling
 * Not have #region blocks, this is a sign of a long method or a large class
 * Not use magic numbers or magic strings, instead use enums or constants (prefer static readonly fields in C# instead of const, because const is statically linked at compile time and may break xcopy deployment of library code)
---------------------------------------------------------------------------------------------------------------------
-## Comments:
+
+## 8. Comments:
 * Are usually unnecessary when code is clean and understandable
 * TODO comments are OK
 * Legal copyright/license comments are OK
 * Informative complementary comments (like explaining the required date format on an abstract method argument, or reason behind an implementation decision, etc.) which cannot be expressed in code is OK
 * Code should be deleted instead of commented out
 * Public classes/members can have documentation comments (java docs comments) but private classes/members should not
---------------------------------------------------------------------------------------------------------------------
-## Error handling:
+
+## 9. Error handling:
 * Exceptions should be used instead of return values from methods (to prevent deeply nested code blocks)
 * Errors should be handled where they occur
 * Specific exceptions with informative description messages should be used instead of generic exceptions
@@ -94,8 +110,9 @@
 * Errors should be logged
 * Do not pass null to a method and do not return null (see methods section)
 * If method depends on parameters passed from uncontrolled outside environment, use defensive coding and check arguments first
---------------------------------------------------------------------------------------------------------------------
-## Code metrics that signal bad code quality, and should constantly be tracked:
+
+## 10. Code metrics:
+Code metrics that signal bad code quality, and should constantly be tracked:
 * Cyclomatic complexity (measures independent linear code paths/branches), >10 is bad
 * Lack of cohesion (cohesion measures correlation between methods and field members of a class, if a lot of methods do not use a lot of field members in a class, it lacks cohesion and should be divided into more classes)
 * Coupling between classes (if a class definition and its methods use too many other classes, it is highly coupled, hard to use and test, and should be broken down into more classes and should also use abstractions like interfaces instead)
