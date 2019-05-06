@@ -12,9 +12,9 @@
 - [10. Code metrics](#10-code-metrics)
 
 ## 1. Clean code principles:
-* You should use the right tool for the job (tech boundaries matter, do not mix code between HTML, Javascript, CSS, C# backend, SQL database, they have their own strong use cases and there are clear ways of communication between them, use SQL and db parameters to talk to db, run security, validation and business logic in the backend and use http to talk to it, use JSON and cookies to respond to javascript frontend, use CSS to style HTML, etc.)
-* Code should have a high signal to noise ratio (TED=terse, expressive, do one thing, DRY=don't repeat yourself, similar to db normalization)
-* Code should be self documenting (clear intent, use proper layers of abstraction)
+* You should use the right tool for the job (tech boundaries matter, do not mix code between HTML, Javascript, CSS, C# backend, SQL database, they have their own strong use cases and there are clear ways of communication between them, use SQL and DB parameters to talk to DB, run security, validation and business logic in the backend and use HTTP to talk to it, use JSON and cookies to respond to javascript frontend, use CSS to style HTML, etc.)
+* Code should have a high signal to noise ratio (TED=terse, expressive, do one thing, DRY=don't repeat yourself, similar to DB normalization)
+* Code should be self-documenting (clear intent, use proper layers of abstraction)
 
 ## 2. Reasons for clean code:
 * Most of the time and resources are spent during the maintenance phase in the lifecycle of a software project
@@ -56,12 +56,12 @@ Names should:
 * Be nouns for a class and objects
 * Be verbs for methods and delegates (lambda functions)
 * Be consistent (use either manager, controller or driver but not all for the same purpose)
-* Be picked from the business problem domain (Client, user, account, payment, etc.) and the solution domain (computer science terms, algorith names, design pattern names)
-* Larger scoped classes and methods (like public apis, public or protected member methods) should have a shorter name
+* Be picked from the business problem domain (Client, user, account, payment, etc.) and the solution domain (computer science terms, algorithm names, design pattern names)
+* Larger scoped classes and methods (like public APIs, public or protected member methods) should have a shorter name
 * Smaller scoped classes and methods (like private classes or private methods) should have a longer name
 * Larger scoped variable members (like global variables, constants, public or protected properties) should have a longer name
 * Smaller scoped variable members (like private member variables or local variables) should have a shorter name
-* Method arguments, exception instances and counter veriables should have shorter names
+* Method arguments, exception instances, and counter variables should have shorter names
 * Boolean variables and members should start with is or be a past or simple present tense verb (like isDone, isLoggedIn, done, loggedIn, doesSomething, Validates(), etc.)
 
 ## 7. Methods:
@@ -73,28 +73,28 @@ Methods should:
 * Not have more than 3 levels of nesting in blocks
 * Have single line in its conditional blocks (extract the block into a separate method if it is more than one line)
 * Should not have side-effects other than its name implies (complicates the code)
-* Apply command query separation, should either return a value or change some state but not both (except for Try...() methods or when a command and a query has to be atomic like a Login() method, or for performance reasons like a db Insert() method which will also retrieves the Id anf foreign key Ids on the object after inserting an object graph)
+* Apply command-query separation, should either return a value or change some state but not both (except for Try...() methods or when a command and a query has to be atomic like a Login() method, or for performance reasons like a DB Insert() method which will also retrieves the Id and foreign key Ids on the object after inserting an object graph)
 * Throw exception instead of return error result (to eliminate deeply nested blocks)
 * Extract long conditions (having multiple and/or operators) into a separate method that returns the bool result of this long condition
 * Not have more than 3 parameters
-* (You can grab the outside code getting or calculating a parameter and move it inside the method being called, and remove this method thid "parameter object")
+* (You can grab the outside code getting or calculating a parameter and move it inside the method being called, and remove this method "parameter object")
 * (You can also extract some of the parameters into a "parameter object", then even move the method and turn it into a member method of this object, thus remove those parameters)
 * Not have boolean flag parameters (extract to 2 different methods for each case of the flag)
 * Not pass null as parameters when calling other methods (else every methods will have to check if their arguments are null each time they are called)
-* Not return null, but instead return a Maybe<T> result, or an empty collection, or throw exception when appropiate (else every method result will have to be checked if it is null each time it is called, somebody will forget this check and try to use the null result)
+* Not return null, but instead return a Maybe<T> result, or an empty collection, or throw an exception when appropriate (else every method result will have to be checked if it is null each time it is called, somebody will forget this check and try to use the null result)
 * Prefer not using output parameters, instead return it as a result
 * Have a single return (but early returns for defensive coding is good, or multiple returns in very short methods is OK)
 * Fail fast (return early)
 * Not use goto
 * Not have multiple returns/breaks inside loops
-* Not have large number of cases in switch statements (don't tell, rather ask, use polymorphism for case code blocks or hashtable/dictionary for case return values)
-* Not have temporal coupling (like Open...() some code block... Close...(), instead either use a method that accepts the the code block as a lambda Action<T>, or use the .Net using (...) block Disposable pattern, or use template method pattern)
-* Not have very long lines that need horizontal scrooling
+* Not have a large number of cases in switch statements (don't tell, rather ask, use polymorphism for case code blocks or hashtable/dictionary for case return values)
+* Not have temporal coupling (like Open...() some code block... Close...(), instead either use a method that accepts the code block as a lambda Action<T>, or use the .Net using (...) block Disposable pattern, or use template method pattern)
+* Not have very long lines that need horizontal scrolling
 * Not have #region blocks, this is a sign of a long method or a large class
-* Not use magic numbers or magic strings, instead use enums or constants (prefer static readonly fields in C# instead of const, because const is statically linked at compile time and may break xcopy deployment of library code)
+* Not use magic numbers or magic strings, instead use enums or constants (prefer static read-only fields in C# instead of const, because const is statically linked at compile time and may break xcopy deployment of library code)
 
 ## 8. Comments:
-* Are usually unnecessary when code is clean and understandable
+* Are usually unnecessary when the code is clean and understandable
 * TODO comments are OK
 * Legal copyright/license comments are OK
 * Informative complementary comments (like explaining the required date format on an abstract method argument, or reason behind an implementation decision, etc.) which cannot be expressed in code is OK
@@ -109,7 +109,7 @@ Methods should:
 * When we need to catch multiple exceptions in the same try/catch block, we can extend these exception types from a base exception type and catch the base exception type instead
 * Errors should be logged
 * Do not pass null to a method and do not return null (see methods section)
-* If method depends on parameters passed from uncontrolled outside environment, use defensive coding and check arguments first
+* If method depends on parameters passed from the uncontrolled outside environment, use defensive coding and check arguments first
 
 ## 10. Code metrics:
 Code metrics that signal bad code quality, and should constantly be tracked:
