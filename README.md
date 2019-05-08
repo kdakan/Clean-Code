@@ -80,7 +80,7 @@ Methods should:
 * (You can grab the outside code getting or calculating a parameter and move it inside the method being called, and remove this method "parameter object")
 * (You can also extract some of the parameters into a "parameter object", then even move the method and turn it into a member method of this object, thus remove those parameters)
 * Not have boolean flag parameters (extract to 2 different methods for each case of the flag)
-* Not pass null as parameters when calling other methods (else every methods will have to check if their arguments are null each time they are called)
+* Not pass null as parameters when calling other methods (else each method will have to check if its arguments are null when it is called)
 * Not return null, but instead return a Maybe<T> result, or an empty collection, or throw an exception when appropriate (else every method result will have to be checked if it is null each time it is called, somebody will forget this check and try to use the null result)
 * Prefer not using output parameters, instead return it as a result
 * Have a single return (but early returns for defensive coding is good, or multiple returns in very short methods is OK)
@@ -88,7 +88,7 @@ Methods should:
 * Not use goto
 * Not have multiple returns/breaks inside loops
 * Not have a large number of cases in switch statements (don't tell, rather ask, use polymorphism for case code blocks or hashtable/dictionary for case return values)
-* Not have temporal coupling (like Open...() some code block... Close...(), instead either use a method that accepts the code block as a lambda Action<T>, or use the .Net using (...) block Disposable pattern, or use template method pattern)
+* Not have temporal coupling (like Open...() some code block... Close...(), instead, either use a method that accepts the code block as a lambda Action<T>, or use the C# using (...) block Disposable pattern, or use template method pattern)
 * Not have very long lines that need horizontal scrolling
 * Not have #region blocks, this is a sign of a long method or a large class
 * Not use magic numbers or magic strings, instead use enums or constants (prefer static read-only fields in C# instead of const, because const is statically linked at compile time and may break xcopy deployment of library code)
